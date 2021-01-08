@@ -53,3 +53,4 @@ Im Folgenden werden die fachlichen Anforderungen beschrieben, die Deine Implemen
 ## Technische Anforderungen
 1. Implementiere die Anwendung in TypeScript mit React
 2. Schreibe _Unit_-Tests um die Funktionsfähigkeit des Filterverhaltens über die betroffenen Komponenten hinweg sicherzustellen
+3. Stelle den Code als Git-Repository auf einer Plattform Deiner Wahl zur Verfügung
