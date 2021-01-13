@@ -42,33 +42,19 @@ Im Folgenden werden die fachlichen Anforderungen beschrieben, die Deine Implemen
 3. Existieren keine Artikel die den Filterkriterien entsprechen, so wird ein Platzhalterinhalt wie im Prototyp dargestellt
 
 ## Technische Anforderungen
-1. Implementiere die Anwendung in TypeScript mit React
+1. Implementiere die Anwendung in TypeScript mit React. Du kannst dieses Repository als Vorlage klonen.
 2. Schreibe _Unit_-Tests um die Funktionsfähigkeit der Artikelliste sicherzustellen
 3. Stelle den Code als Git-Repository auf einer Plattform Deiner Wahl zur Verfügung
 
-# yarn commands
+## Technische Dokumentation
+Hier einige kurze technische Hinweise.
 
-The following yarn scripts are available.
+### Styles
+Damit Du nicht alle Styles selbst ermitteln musst findest Du in `src/style.ts` einige Farb- und Schriftgrößendefinitionen.
 
-### `yarn start`
+### yarn-Skripte
+Das Repository wurde mit [create-react-app](https://create-react-app.dev) erstellt. Dementsprechend stehen unter anderem folgende yarn-Skripte zur Verfügung:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `yarn start`: Startet die App und ruft sie im Browser auf
+- `yarn test`: Startet den Test-Runner im Watch-Mode
+- `yarn build`: Erstellt einen Production-Build der App im `build`-Verzeichnis
