@@ -1,10 +1,54 @@
-# Getting Started with Create React App
+# Coding Challenge: Knowledge Base Frontend
+![Knowledge Base Desktop](res/desktop.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ziel der Aufgabe ist es, ein Frontend zur Anzeige von Artikeln aus einer fiktiven Knowledge Base mit einfacher Suchmöglichkeit zu entwickeln.
 
-## Available Scripts
+## Prototypen
+Zur Veranschaulichung der Funktionalität und zur Vorgabe des Designs existieren zwei Design-Prototypen:
 
-In the project directory, you can run:
+- [Desktop-Prototype](https://framer.com/share/Coding-Frontend-Developer-v2--kPA0Yka2XNBzvHmDgWrK/VfUK15NXl)
+- [Mobile-Prototype](https://framer.com/share/Coding-Frontend-Developer-v2--kPA0Yka2XNBzvHmDgWrK/cQkg7Br8G)
+
+Beachte, dass die Prototypen nur der Veranschaulichung dienen und keine Produktionsreife Umsetzung darstellen.
+
+## Backend
+Das Backend ist über eine REST-API erreichbar:
+
+- [Dokumentation der Backend-REST-API](https://documenter.getpostman.com/view/258409/TVzSjHFC)
+
+## Fachliche Anforderungen
+Im Folgenden werden die fachlichen Anforderungen beschrieben, die Deine Implementierung erfüllen soll.
+
+### Allgemeine Anforderung
+1. Aufbau und Design der App entsprechen dem Prototyp.
+2. Die Darstellung ist responsiv.
+
+### Darstellung
+1. Artikel aus der Knowledge Base werden als Karten in der Benutzeroberfläche dargestellt.
+2. Jede Karte enthält folgende Informationen des Artikels:
+	1. Titel
+	2. Kategorie
+	3. Teaser-Text
+3. Die Karten sind in Zeilen angeordnet. Die Anzahl der pro Zeile dargestellten Karten hängt von der Breite des Browsers ab. Auf einem Smartphone wird nur eine Karte pro Zeile dargestellt.
+4. Passen nicht alle Karten auf den Bildschirm kann ich vertikal scrollen.
+5. Die Darstellung berücksichtigt variable Textlängen.
+
+### Ladeverhalten
+1. Findet ein Ladevorgang statt, so wird eine Platzhalterkarte wie im Prototyp dargestellt.
+
+### Filtern
+1. Ich kann die Artikelliste über einen Suchbegriff eingrenzen. Das Backend liefert Artikel, deren Titel, Teaser-Text _oder_ Kategorie den Suchtext enthalten.
+2. Durch Klick auf die Kategorie einer Karte wird der Kategoriename ins Suchfeld übernommen. Dadurch wird eine Suche ausgeführt, als wenn ich den Text manuell dort eingegeben hätte.
+3. Existieren keine Artikel die den Filterkriterien entsprechen, so wird ein Platzhalterinhalt wie im Prototyp dargestellt
+
+## Technische Anforderungen
+1. Implementiere die Anwendung in TypeScript mit React
+2. Schreibe _Unit_-Tests um die Funktionsfähigkeit der Artikelliste sicherzustellen
+3. Stelle den Code als Git-Repository auf einer Plattform Deiner Wahl zur Verfügung
+
+# yarn commands
+
+The following yarn scripts are available.
 
 ### `yarn start`
 
@@ -28,19 +72,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
