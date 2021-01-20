@@ -20,7 +20,7 @@ Das Backend ist über eine REST-API erreichbar:
 Im Folgenden werden die fachlichen Anforderungen beschrieben, die Deine Implementierung erfüllen soll.
 
 ### Allgemeine Anforderung
-1. Aufbau und Design der App entsprechen dem Prototyp.
+1. Aufbau, Verhalten und Design der App sollen _exakt_ dem Prototyp entsprechen.
 2. Die Darstellung ist responsiv.
 
 ### Darstellung
