@@ -1,0 +1,11 @@
+.displayCard {
+  width: 300px;
+  height: 260px;
+  margin-bottom: 10px;
+}
+
+.displayCard__contents {
+  margin: 12px;
+  object-fit: contain;
+  font-size: small;
+}
