@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it matches snapshot 1`] = `
+<div
+  className="searchInfoDisplay"
+>
+  <div
+    className="nav"
+  >
+    <div
+      className="nav__text"
+    >
+      <h3>
+        Knowledge Base
+      </h3>
+    </div>
+    <div
+      className="nav__text2"
+    >
+      <h3>
+        KB
+      </h3>
+    </div>
+    <div
+      className="nav__search"
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Suchen..."
+        style={
+          Object {
+            "background": "#F2F1F9",
+            "border": "none",
+            "borderRadius": "15px",
+            "padding": "0.5rem",
+            "textDecoration": "none",
+            "width": "20rem",
+          }
+        }
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    data-testid="loading"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      />
+    </div>
+  </div>
+</div>
+`;

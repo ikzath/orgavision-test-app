@@ -7,7 +7,7 @@ import "../style/SearchInfo.css";
 import DisplayLoadingCard from "./DisplayLoadingCard";
 
 
-const SearchInfo: React.FC = () => {
+const SearchInfo: React.FC<any> = () => {
     
     const defaultProps:IPost[] = [];
     const [query, setquery] = useState<string>();
@@ -16,6 +16,7 @@ const SearchInfo: React.FC = () => {
     const [searchResults, setsearchResults]: [IPost[], (searchResults: IPost[]) => void] = React.useState(defaultProps);
     const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem", borderRadius: "15px", textDecoration: "none"};
 
+    // let fetchData: () => any;
 
     const handleChange = (
       e: React.ChangeEvent<HTMLInputElement>
@@ -55,7 +56,7 @@ const SearchInfo: React.FC = () => {
     }, []);
   
   
-  const fetchData = async(): Promise<any> => {
+    const fetchData = async(): Promise<any> => {
     try{
         setLoading(true)
         const result = await axios.get(`https://orgavision-codingchallenge.azurewebsites.net/v2/article?search=${query}`
@@ -65,7 +66,7 @@ const SearchInfo: React.FC = () => {
         setsearchResults(results.records);
         console.log(results);
     }
-    catch (err: any) {                        
+      catch (err: any) {                        
       console.log('no results', err);
     }
     };
@@ -73,15 +74,15 @@ const SearchInfo: React.FC = () => {
 
     let queryResults =         
       searchResults.map((item: any, i: number)=> (
-        <Col md={3} key={item.id}> 
-            <DisplayCard
+        <Col md={3} key={item.id} > 
+            <DisplayCard                        
             key={item.id}
             id = {item.id}
             title={item.fields.title}
             teaser={item.fields.teaser}
             category= {item.fields.category.map((itemCategory: any, i: number) => (
             <Button style={{ color: 'whitesmoke', backgroundColor: '#A0A0A0'}} to='' key={i} onClick={()=> setquery(itemCategory)}>{itemCategory}</Button> 
-                ))} />
+            ))} />
         </Col>
         ))     
 
@@ -89,7 +90,7 @@ const SearchInfo: React.FC = () => {
       let pageOnLoadResults =                 
         posts.map((item: any, i: number)=> (
         <Col md={3} key={item.id} > 
-            <DisplayCard 
+            <DisplayCard             
                 key={item.id}
                 id = {item.id}
                 title={item.fields.title}
@@ -120,9 +121,9 @@ return (
           />
           </div>       
       </div>
-      <div>
+      <div data-testid='loading'>
       <Container>
-          {loading ? <DisplayLoadingCard /> :
+          {loading ? <DisplayLoadingCard />:
       <Row>
           {query ? queryResults : pageOnLoadResults }
       </Row> }
@@ -132,4 +133,4 @@ return (
     )
 }
 
-export default SearchInfo
+export default SearchInfo;

@@ -1,6 +1,8 @@
-import SearchInfo from "./components/SearchInfo";
+import SearchInfo from "../components/SearchInfo";
 import React from "react";
 import * as ReactDOM from "react-dom";
+import { fireEvent, render } from "@testing-library/react";
+import renderer from "react-test-renderer";
 
 
 describe('SearchInfo component tests', ()=> {
@@ -23,5 +25,17 @@ describe('SearchInfo component tests', ()=> {
         expect(inputs[0].placeholder).toBe('Suchen...')
     })
 
+    it('it passes credentials correctly',()=> {
+        const inputs = container.querySelectorAll('input');
+        const onChangrInput = inputs[0];
+        fireEvent.change(onChangrInput, { target: { value:'something'}});
+    })
 })
+
+    it('it matches snapshot', ()=> {
+        const tree = renderer.create(<SearchInfo/>).toJSON();
+        expect(tree).toMatchSnapshot();
+    })
+
+
 
